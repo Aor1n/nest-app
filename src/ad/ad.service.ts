@@ -1,8 +1,16 @@
+import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class AppService {
-  mixAdFormatsByUI(): { id: number, name: string, description: string, icon: string }[] {
+export class AdService {
+  constructor(private httpService: HttpService) {}
+
+  // async fetchAdFormats(): Promise<any> {
+  //   const response = await []
+  //   return response
+  // }
+
+  adFormats(): { id: number, name: string, description: string, icon: string }[] {
     return [
       {
         id: 1, 
